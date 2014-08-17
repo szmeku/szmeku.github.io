@@ -1,0 +1,60 @@
+<!doctype html>
+<html class="no-js" ng-app="fanpagePosts">
+  <head>
+    <meta charset="utf-8">
+    <title>frontend</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+    <link rel="stylesheet" href="styles/vendor-5e0abcbc.css">
+
+    <link rel="stylesheet" href="styles/main-674e8073.css">
+
+    <script src="scripts/modernizr-c1ff1650.js"></script>
+  </head>
+  <body ng-init='alerts=[]'>
+    <!--[if lt IE 10]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+    <div class="container">
+          <nav class="navbar navbar-static-top navbar-inverse">
+            <div class="navbar-header">
+              <a class="navbar-brand" href="#">Ściągator Pościksów</a>
+            </div>
+
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-6">
+              <ul class="nav navbar-nav">
+                <li><a ui-sref="settings">Ustawienia</a></li>
+                <li><a ui-sref="posts">Posty</a></li>
+              </ul>
+            </div>
+          </nav>
+    </div>
+
+    <div class="container" ng-controller='AlertsCtrl'>
+        <alert ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)">{{alert.msg}}</alert>
+    </div>
+
+    <div class="container">
+      <div ui-view></div>
+    </div>
+
+
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+    <script>
+      (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+      function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+      e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+      e.src='//www.google-analytics.com/analytics.js';
+      r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+      ga('create','UA-XXXXX-X');ga('send','pageview');
+    </script>
+
+    <script src="scripts/vendor-970bc24d.js"></script>
+
+    <script src="scripts/main-825cef47.js"></script>
+
+  </body>
+</html>
